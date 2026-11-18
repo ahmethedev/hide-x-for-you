@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Hide X For You",
+  "version": "1.0.0",
+  "description": "X.com ana sayfasındaki \"Sana özel\" (For you) sekmesini gizler ve otomatik olarak \"Takip edilenler\"e geçer.",
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

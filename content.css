@@ -1,0 +1,13 @@
+/*
+ * content.js, /home sayfasındayken <html> elementine "hfy-home" sınıfını ekler.
+ * Ana sayfa sekme listesinin ilk elemanı her dilde "For you" / "Sana özel" sekmesidir.
+ * /home'da başka tablist'ler de var (akış içi bileşenler) ama onlarda role="tab" yok.
+ */
+html.hfy-home [data-testid="primaryColumn"] [role="tablist"]:has(> * > [role="tab"]) > :first-child {
+  display: none !important;
+}
+
+/* "For you" seçiliyken (Takip edilenler'e geçilene kadar) akışı gösterme. */
+html.hfy-home.hfy-foryou [data-testid="primaryColumn"] section[role="region"] {
+  visibility: hidden !important;
+}
